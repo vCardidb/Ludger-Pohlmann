@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Lüdger Pohlmann
+N:Pohlmann;Lüdger;;;
+TITLE:Kaminholz, Verarbeitung & Handel
+ORG:Pohlmann Kaminholz
+TEL;TYPE=WORK,VOICE:0151-28895031
+TEL;TYPE=CELL:0151-28895031
+EMAIL;TYPE=WORK:post@pohlmann-kaminholz.de
+ADR;TYPE=WORK:;;Am Hach 43;;;;
+ADR;TYPE=POSTAL:;;Lehmkuhlweg 3;Hopsten;;48496;Deutschland
+NOTE:Abholadresse: Lehmkuhlweg 3, 48496 Hopsten
+URL:https://www.pohlmann-kaminholz.de
+CATEGORIES:Holzhandel,Brennholz,Kaminholz
+END:VCARD
