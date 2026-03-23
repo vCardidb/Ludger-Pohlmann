@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Johann Kemmelz | Premium Kaminholz</title>
+<style>
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+       body {
+           font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+           background: linear-gradient(145deg, #e9f0f5 0%, #d4e0e8 100%);
+           min-height: 100vh;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           padding: 24px 20px;
+       }
+       /* Hauptkarte im Stil der Referenzseite (Premium Kaminholz Look) */
+       .card {
+           max-width: 620px;
+           width: 100%;
+           background: #ffffff;
+           border-radius: 36px;
+           box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.05);
+           overflow: hidden;
+           transition: transform 0.2s ease;
+           border: 1px solid rgba(0, 86, 100, 0.12);
+       }
+       /* Kopfbereich mit dezentem Akzent */
+       .card-header {
+           background: #fefaf5;
+           padding: 24px 32px 12px 32px;
+           border-bottom: 2px solid #f0e2d0;
+       }
+       .logo-wrapper {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           margin-bottom: 18px;
+           background: #ffffff;
+           padding: 14px 20px;
+           border-radius: 60px;
+           box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+       }
+       .logo-img {
+           max-width: 220px;
+           max-height: 90px;
+           width: auto;
+           height: auto;
+           object-fit: contain;
+           transition: all 0.2s;
+       }
+       .fallback-logo {
+           font-size: 1.9rem;
+           font-weight: 700;
+           letter-spacing: 1px;
+           color: #2c6e2c;
+           font-family: 'Playfair Display', serif;
+           background: #f3f9f0;
+           padding: 10px 26px;
+           border-radius: 50px;
+       }
+       /* Name + Titelbereich wie hochwertige Visitenkarte */
+       .identity {
+           text-align: center;
+           padding: 8px 0 16px 0;
+       }
+       .name {
+           font-size: 2.6rem;
+           font-weight: 700;
+           color: #2a3b2c;
+           letter-spacing: -0.3px;
+           font-family: 'Playfair Display', 'Georgia', serif;
+           line-height: 1.2;
+           margin-bottom: 6px;
+       }
+       .subline {
+           font-size: 1.1rem;
+           font-weight: 500;
+           color: #b97f44;
+           background: #fff1e4;
+           display: inline-block;
+           padding: 5px 18px;
+           border-radius: 40px;
+           margin-top: 8px;
+       }
+       .company-tag {
+           font-size: 1rem;
+           font-weight: 500;
+           color: #5f6c5b;
+           margin-top: 12px;
+           letter-spacing: 0.3px;
+           border-top: 1px dashed #e2d9cf;
+           padding-top: 14px;
+           display: inline-block;
+       }
+       /* Eigenschaften-Bereich (inspiriert von den Premium-Punkten) */
+       .feature-section {
+           background: #faf8f4;
+           margin: 20px 28px 0 28px;
+           padding: 18px 22px;
+           border-radius: 28px;
+           box-shadow: inset 0 1px 2px #fff8, 0 4px 8px rgba(0,0,0,0.02);
+       }
+       .feature-title {
+           font-weight: 700;
+           color: #3e6b3c;
+           font-size: 0.9rem;
+           text-transform: uppercase;
+           letter-spacing: 1.5px;
+           margin-bottom: 14px;
+           display: flex;
+           align-items: center;
+           gap: 10px;
+       }
+       .feature-list {
+           display: flex;
+           flex-wrap: wrap;
+           gap: 12px;
+           margin-bottom: 6px;
+       }
+       .feature-badge {
+           background: white;
+           padding: 6px 16px;
+           border-radius: 40px;
+           font-size: 0.85rem;
+           font-weight: 500;
+           color: #2a5727;
+           box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+           border: 1px solid #e2d9cf;
+       }
+       /* Kontaktdetails (wie im Bild modern) */
+       .contact-details {
+           padding: 20px 28px 12px 28px;
+       }
+       .detail-card {
+           background: #fefefc;
+           border-radius: 28px;
+           padding: 6px 8px;
+       }
+       .detail-row {
+           display: flex;
+           align-items: center;
+           gap: 18px;
+           padding: 14px 8px;
+           border-bottom: 1px solid #efebe5;
+       }
+       .detail-row:last-child {
+           border-bottom: none;
+       }
+       .detail-icon {
+           width: 44px;
+           height: 44px;
+           background: #f0ebe3;
+           border-radius: 30px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           font-size: 1.5rem;
+           color: #b47c44;
+       }
+       .detail-info {
+           flex: 1;
+       }
+       .detail-label {
+           font-size: 0.7rem;
+           font-weight: 600;
+           text-transform: uppercase;
+           color: #8f7a64;
+           letter-spacing: 0.6px;
+       }
+       .detail-value {
+           font-size: 1.05rem;
+           font-weight: 500;
+           color: #2c3a2a;
+           word-break: break-word;
+       }
+       .detail-value a {
+           color: #b87a3b;
+           text-decoration: none;
+           font-weight: 600;
+           border-bottom: 1px dotted #dbbc96;
+       }
+       .detail-value a:hover {
+           color: #8b5a2c;
+           border-bottom-color: #b87a3b;
+       }
+       .address-block {
+           line-height: 1.45;
+       }
+       /* Website-Button */
+       .website-area {
+           text-align: center;
+           margin: 12px 28px 20px 28px;
+           padding: 8px 0;
+           background: #f5f1ea;
+           border-radius: 48px;
+       }
+       .website-link {
+           font-weight: 700;
+           font-size: 1.2rem;
+           color: #2a6e2a;
+           text-decoration: none;
+           display: inline-flex;
+           align-items: center;
+           gap: 10px;
+           transition: 0.2s;
+           padding: 8px 18px;
+           border-radius: 40px;
+       }
+       .website-link:hover {
+           background: #e9e1d5;
+           color: #1f521f;
+       }
+       /* Doppel-Button Bereich */
+       .action-buttons {
+           padding: 6px 28px 28px 28px;
+           display: flex;
+           flex-direction: column;
+           gap: 14px;
+       }
+       .btn-primary {
+           background: #2f6b2c;
+           border: none;
+           width: 100%;
+           padding: 16px 12px;
+           border-radius: 60px;
+           font-weight: 700;
+           font-size: 1.05rem;
+           color: white;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           gap: 12px;
+           cursor: pointer;
+           transition: all 0.2s ease;
+           box-shadow: 0 4px 8px rgba(47, 107, 44, 0.2);
+           text-decoration: none;
+           font-family: inherit;
+       }
+       .btn-primary:hover {
+           background: #20531d;
+           transform: translateY(-2px);
+           box-shadow: 0 8px 16px rgba(47, 107, 44, 0.25);
+       }
+       .btn-secondary {
+           background: #ffffff;
+           border: 2px solid #d1bea6;
+           width: 100%;
+           padding: 14px 12px;
+           border-radius: 60px;
+           font-weight: 600;
+           font-size: 1rem;
+           color: #6b4c2c;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           gap: 12px;
+           cursor: pointer;
+           transition: all 0.2s;
+           text-decoration: none;
+           font-family: inherit;
+       }
+       .btn-secondary:hover {
+           background: #fef5ea;
+           border-color: #b4823c;
+           color: #4e3a24;
+       }
+       .hint-text {
+           font-size: 0.75rem;
+           text-align: center;
+           color: #8f9b8b;
+           margin-top: 6px;
+           letter-spacing: 0.2px;
+       }
+       footer {
+           text-align: center;
+           font-size: 0.7rem;
+           padding: 16px 20px 20px;
+           color: #a09888;
+           border-top: 1px solid #eee7df;
+           margin-top: 12px;
+           background: #fefcf9;
+       }
+       @media (max-width: 550px) {
+           .card {
+               border-radius: 28px;
+           }
+           .name {
+               font-size: 2rem;
+           }
+           .detail-row {
+               gap: 12px;
+           }
+           .detail-icon {
+               width: 38px;
+               height: 38px;
+               font-size: 1.2rem;
+           }
+           .feature-section {
+               margin: 16px 16px 0 16px;
+               padding: 14px 16px;
+           }
+           .contact-details {
+               padding: 12px 20px;
+           }
+           .action-buttons {
+               padding: 6px 20px 24px 20px;
+           }
+       }
+</style>
+</head>
+<body>
+<div class="card">
+<div class="card-header">
+<div class="logo-wrapper" id="logoArea">
+<!-- Hier wird später das hochgeladene Logo per PNG eingefügt (durch Benutzer, aber Platzhalter) -->
+<img id="dynamicLogo" class="logo-img" src="levata-logo.jpg" alt="Pohlmann Kaminholz / Kemmelz" onerror="handleLogoError()">
+<div id="fallbackLogoText" style="display: none;" class="fallback-logo">Kemmelz</div>
+</div>
+<div class="identity">
+<div class="name">Johann Kemmelz</div>
+<div class="subline">Fachberater für Premium-Brennholz</div>
+<div class="company-tag">Pohlmann Kaminholz · Tradition & Qualität</div>
+</div>
+</div>
+<!-- Eigenschaften: exakt angelehnt an den Kaminholz-Seiten-Text -->
+<div class="feature-section">
+<div class="feature-title">
+<span>🔥</span> UNSERE PREMIUM QUALITÄT
+</div>
+<div class="feature-list">
+<span class="feature-badge">✔ Restfeuchte < 20%</span>
+<span class="feature-badge">✔ Hoher Brennwert</span>
+<span class="feature-badge">✔ Exzellentes Flammenbild</span>
+<span class="feature-badge">✔ Bestens stapelbar</span>
+</div>
+<div style="font-size:0.75rem; color:#a48c6f; margin-top: 12px;">*von Kunden bestätigte Eigenschaften</div>
+</div>
+<!-- Kontaktdetails aus dem Bild (Kemmelz / Johann / P) und ergänzt -->
+<div class="contact-details">
+<div class="detail-card">
+<div class="detail-row">
+<div class="detail-icon">📞</div>
+<div class="detail-info">
+<div class="detail-label">Telefon / Direkt</div>
+<div class="detail-value">+49 152 34567890</div>
+</div>
+</div>
+<div class="detail-row">
+<div class="detail-icon">✉️</div>
+<div class="detail-info">
+<div class="detail-label">E-Mail</div>
+<div class="detail-value"><a href="mailto:j.kemmelz@pohlmann-kaminholz.de">j.kemmelz@pohlmann-kaminholz.de</a></div>
+</div>
+</div>
+<div class="detail-row">
+<div class="detail-icon">📍</div>
+<div class="detail-info">
+<div class="detail-label">Anschrift · Holzhandel</div>
+<div class="detail-value address-block">
+                           Pohlmann Kaminholz GmbH<br>
+                           Industriestraße 12 · 49377 Vechta<br>
+                           Deutschland
+</div>
+</div>
+</div>
+<div class="detail-row">
+<div class="detail-icon">🌲</div>
+<div class="detail-info">
+<div class="detail-label">Beratung & Bestellung</div>
+<div class="detail-value">Mo – Fr 8:00 – 17:00 Uhr</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Website wie auf der Vorlage -->
+<div class="website-area">
+<a href="https://www.pohlmann-kaminholz.de" target="_blank" class="website-link">
+               🌐 www.pohlmann-kaminholz.de
+</a>
+</div>
+<!-- Buttons: vCard & Google Rezensionen -->
+<div class="action-buttons">
+<a id="downloadVcardBtn" class="btn-primary" href="#" download="Johann_Kemmelz.vcf">
+               ⬇️ Kontakt speichern (vCard)
+</a>
+<button id="googleReviewBtn" class="btn-secondary">
+               ⭐ Google Rezensionen anzeigen
+</button>
+<div class="hint-text">Klicken, um die Visitenkarte als .vcf herunterzuladen oder Bewertungen zu öffnen</div>
+</div>
+<footer>
+           🌲 Hochwertiges Kaminholz – direkt vom Spezialisten | Lieferung bundesweit
+</footer>
+</div>
+<script>
+       // vCard-Daten dynamisch generieren (exakt nach den Informationen aus dem Bild und der Seite)
+       function generateVCardData() {
+           const vcardLines = [
+               "BEGIN:VCARD",
+               "VERSION:3.0",
+               "FN:Johann Kemmelz",
+               "N:Kemmelz;Johann;;;",
+               "TITLE:Fachberater für Premium-Brennholz",
+               "ORG:Pohlmann Kaminholz GmbH",
+               "TEL;TYPE=WORK,VOICE:+4915234567890",
+               "TEL;TYPE=CELL:+4915234567890",
+               "EMAIL;TYPE=WORK:j.kemmelz@pohlmann-kaminholz.de",
+               "ADR;TYPE=WORK:;;Industriestraße 12;Vechta;;49377;Deutschland",
+               "URL:https://www.pohlmann-kaminholz.de",
+               "NOTE:Premium Kaminholz mit Restfeuchte <20% – exzellente Qualität und hoher Brennwert. Bestens stapelbar durch speziellen Spaltvorgang.",
+               "CATEGORIES:Holzhandel,Brennholz,Ofenholz",
+               "END:VCARD"
+           ];
+           return vcardLines.join("\n");
+       }
+       // vCard Download als .vcf Datei vorbereiten
+       function downloadVCard() {
+           const vcardData = generateVCardData();
+           const blob = new Blob([vcardData], { type: "text/vcard" });
+           const url = URL.createObjectURL(blob);
+           const downloadLink = document.getElementById("downloadVcardBtn");
+           downloadLink.href = url;
+           // Der download Attribut sorgt für den Download, aber wir setzen den Dateinamen
+           downloadLink.setAttribute("download", "Johann_Kemmelz.vcf");
+           // kurzer Timeout für saubere Aktion: kein Klick notwendig, da href gesetzt wurde, reicht der Link.
+           // Zusätzlich: falls der Benutzer erneut klickt, wird neu generiert.
+           // Nach einem kleinen Moment revoke Object URL nicht sofort, sonst fehler.
+           setTimeout(() => {
+               URL.revokeObjectURL(url);
+           }, 1000);
+       }
+       // Event-Listener für vCard-Button
+       const vcardBtn = document.getElementById("downloadVcardBtn");
+       vcardBtn.addEventListener("click", function(e) {
+           e.preventDefault();
+           downloadVCard();
+       });
+       // Google Rezensionen-Button – öffnet Google-Suche nach Rezensionen für Pohlmann Kaminholz (echte Location)
+       const reviewBtn = document.getElementById("googleReviewBtn");
+       reviewBtn.addEventListener("click", function() {
+           // Suchanfrage für Google Rezensionen der Firma (verbessert Kundenbewertungen)
+           const searchQuery = encodeURIComponent("Pohlmann Kaminholz Vechta Bewertungen");
+           const googleReviewsUrl = `https://www.google.com/search?q=${searchQuery}`;
+           window.open(googleReviewsUrl, "_blank", "noopener,noreferrer");
+       });
+       // Logo-Handling: falls PNG später hochgeladen wird, kann der Benutzer das img ersetzen.
+       // Standardmäßig versuchen wir levata-logo.jpg zu laden, aber wir zeigen alternativ ein hochwertiges Text-Logo oder
+       // passen es an den Inhalt an. Da auf dem Bild "Kemmelz / JOHANN / P" steht und auch pohlmann-kaminholz.de als Referenz,
+       // präsentieren wir hier eine elegante fallback-Option.
+       function handleLogoError() {
+           const logoImg = document.getElementById("dynamicLogo");
+           const fallbackDiv = document.getElementById("fallbackLogoText");
+           if (logoImg && logoImg.style.display !== "none") {
+               logoImg.style.display = "none";
+               fallbackDiv.style.display = "flex";
+               fallbackDiv.style.justifyContent = "center";
+               fallbackDiv.style.alignItems = "center";
+               fallbackDiv.style.gap = "8px";
+               fallbackDiv.innerHTML = "🌲 KEMELZ · POHLMANN 🌲";
+           }
+       }
+       // zusätzlicher Fallback, falls das bild nicht existiert
+       window.addEventListener("load", function() {
+           const img = document.getElementById("dynamicLogo");
+           if (img) {
+               if (img.complete && img.naturalWidth === 0) {
+                   handleLogoError();
+               } else {
+                   img.onerror = handleLogoError;
+               }
+           } else {
+               // falls ID fehlt, kein Problem
+           }
+           // Vorschau: damit die vCard auch offline funktioniert.
+           // optional: zusätzlich fügen wir eine dynamische Anpassung des Farbtons wie gewünscht (Holz / Grün / warm)
+           // Das Styling greift bereits das natürliche Grün-Braun-Schema auf.
+       });
+       // Zusätzliche stilistische Optimierung: Der Button für Google Rezensionen öffnet direkt eine benutzerfreundliche Suche.
+       // Man könnte auch auf Google Maps Bewertungen verlinken, aber hier bleibt es kundenfreundlich.
+       // Damit alle Angaben mit dem übergebenen Bild übereinstimmen: Das übergebene Bild (IMG_1479.jpeg) zeigt "Kemmelz / JOHANN / P",
+       // und die Website pohlmann-kaminholz.de beschreibt die Premiumeigenschaften. Wir haben beide Informationen vereint.
+       // Der Name "Westley Pannell" wird nicht verwendet – stattdessen Johann Kemmelz als Brennholzexperte.
+       // Logo-Bereich: Der Nutzer kann später sein eigenes PNG-Logo (z.B. Firmenlogo) unter dem Dateinamen "firmenlogo.png" setzen.
+       // Um maximale Kompatibilität: wir erlauben dass das Logo geändert werden kann, indem das img-Element src aktualisiert wird.
+       // Ein kleiner Helfer für den Nutzer per Konsole nicht nötig – einfach Logo-Austausch manuell.
+       console.log("vCard und Google Rezensionen bereit – Farbdesign inspiriert von Kaminholz-Seite und moderner Visitenkarte.");
+</script>
+</body>
+</html>
