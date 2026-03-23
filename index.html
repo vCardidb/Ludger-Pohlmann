@@ -87,7 +87,7 @@
        .detail-item {
            display: flex;
            align-items: flex-start;
-           margin: 18px 0;
+           margin: 22px 0;
            font-size: 1rem;
        }
        .emoji {
@@ -96,18 +96,29 @@
            min-width: 35px;
            text-align: center;
            color: #b8860b;
+           margin-top: 2px;
        }
        .text {
            color: #2a2418;
            word-break: break-word;
            line-height: 1.5;
+           flex: 1;
        }
        .label {
-           font-weight: 600;
+           font-weight: 700;
            color: #b8860b;
-           margin-right: 8px;
-           min-width: 95px;
-           display: inline-block;
+           display: block;
+           font-size: 0.85rem;
+           text-transform: uppercase;
+           letter-spacing: 0.5px;
+           margin-bottom: 6px;
+       }
+       .value {
+           font-size: 1.05rem;
+           font-weight: 500;
+           color: #2a2418;
+           display: block;
+           line-height: 1.4;
        }
        .email {
            color: #b8860b;
@@ -118,7 +129,7 @@
            text-decoration: underline;
        }
        .address {
-           line-height: 1.6;
+           line-height: 1.5;
        }
        /* Einheitliche Button/Link Gestaltung */
        .action-button {
@@ -197,12 +208,12 @@
            .logo-container {
                min-height: 120px;
            }
-           .label {
-               min-width: 80px;
-           }
            .action-button, .website-button {
                padding: 14px 24px;
                font-size: 1rem;
+           }
+           .value {
+               font-size: 0.95rem;
            }
        }
 </style>
@@ -219,32 +230,42 @@
 <div class="title">Kaminholz, Verarbeitung & Handel</div>
 <div class="company">Ihr Spezialist für hochwertiges Brennholz</div>
 <div class="detail">
+<!-- Telefon -->
 <div class="detail-item">
 <span class="emoji">📞</span>
-<span class="text">
-<span class="label">Telefon:</span> 0151-28895031
-</span>
+<div class="text">
+<span class="label">Telefon:</span>
+<span class="value">0151-28895031</span>
 </div>
+</div>
+<!-- E-Mail -->
 <div class="detail-item">
 <span class="emoji">✉️</span>
-<span class="text">
+<div class="text">
 <span class="label">E-Mail:</span>
+<span class="value">
 <a href="mailto:post@pohlmann-kaminholz.de" class="email">post@pohlmann-kaminholz.de</a>
 </span>
 </div>
+</div>
+<!-- Adresse -->
 <div class="detail-item">
 <span class="emoji">🏠</span>
-<span class="text address">
-<span class="label">Adresse:</span><br>
-                   Am Hach 43
-</span>
+<div class="text">
+<span class="label">Adresse:</span>
+<span class="value">Am Hach 43</span>
 </div>
+</div>
+<!-- Abholadresse -->
 <div class="detail-item">
 <span class="emoji">📍</span>
-<span class="text address">
-<span class="label">Abholadresse:</span><br>
-                   Lehmkuhlweg 3, 48496 Hopsten
+<div class="text">
+<span class="label">Abholadresse:</span>
+<span class="value address">
+                       Lehmkuhlweg 3<br>
+                       48496 Hopsten
 </span>
+</div>
 </div>
 </div>
 <!-- Einheitliche Buttons in Gold -->
