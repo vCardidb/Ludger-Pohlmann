@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Johann Kemmelz | Pohlmann Kaminholz</title>
+<title>Lüdger Pohlmann | Kaminholz Verarbeitung & Handel</title>
 <style>
        * {
            margin: 0;
@@ -12,7 +12,7 @@
        }
        body {
            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-           background: linear-gradient(135deg, #1a2a3a 0%, #2c4050 100%);
+           background: linear-gradient(135deg, #2a2418 0%, #3d3524 100%);
            min-height: 100vh;
            display: flex;
            align-items: center;
@@ -27,60 +27,60 @@
            border-radius: 24px;
            box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.3);
            text-align: center;
-           border-top: 5px solid #0056a7;
+           border-top: 5px solid #d4af37;
        }
        .logo-container {
            margin-bottom: 30px;
            padding: 20px;
-           background: #f5f8fc;
+           background: #fef9e6;
            border-radius: 16px;
-           min-height: 220px;
+           min-height: 140px;
            display: flex;
            align-items: center;
            justify-content: center;
            overflow: hidden;
        }
        .logo-container img {
-           transform: scale(2.5);
            max-width: 100%;
-           max-height: 100%;
+           max-height: 100px;
            width: auto;
            height: auto;
            display: inline-block;
            object-fit: contain;
        }
        .fallback-logo {
-           font-size: 2.2rem;
+           font-size: 1.8rem;
            font-weight: 600;
-           color: #0056a7;
+           color: #b8860b;
            letter-spacing: 1px;
+           font-family: 'Georgia', serif;
        }
        .name {
-           font-size: 2.5rem;
+           font-size: 2.2rem;
            font-weight: 500;
-           color: #1a2a3a;
+           color: #2a2418;
            line-height: 1.2;
            margin-bottom: 5px;
            font-family: 'Georgia', serif;
        }
        .title {
-           font-size: 1.2rem;
-           color: #0056a7;
+           font-size: 1.1rem;
+           color: #b8860b;
            font-weight: 500;
            margin-bottom: 5px;
        }
        .company {
-           font-size: 1.2rem;
-           color: #4a6782;
+           font-size: 1rem;
+           color: #6b5a3e;
            font-weight: 400;
            margin-bottom: 25px;
            padding-bottom: 15px;
-           border-bottom: 2px solid #e5eef5;
+           border-bottom: 2px solid #f0e2bc;
        }
        .detail {
            margin: 30px 0;
            text-align: left;
-           background: #f5f8fc;
+           background: #fef9e6;
            padding: 25px;
            border-radius: 16px;
        }
@@ -88,28 +88,29 @@
            display: flex;
            align-items: flex-start;
            margin: 18px 0;
-           font-size: 1.1rem;
+           font-size: 1rem;
        }
        .emoji {
-           font-size: 1.5rem;
+           font-size: 1.4rem;
            margin-right: 18px;
            min-width: 35px;
            text-align: center;
-           color: #0056a7;
+           color: #b8860b;
        }
        .text {
-           color: #2c4050;
+           color: #2a2418;
            word-break: break-word;
-           line-height: 1.4;
+           line-height: 1.5;
        }
        .label {
            font-weight: 600;
-           color: #0056a7;
+           color: #b8860b;
            margin-right: 8px;
-           min-width: 50px;
+           min-width: 85px;
+           display: inline-block;
        }
        .email {
-           color: #0056a7;
+           color: #b8860b;
            text-decoration: none;
            font-weight: 500;
        }
@@ -117,19 +118,19 @@
            text-decoration: underline;
        }
        .address {
-           line-height: 1.5;
+           line-height: 1.6;
        }
        .vcard-button {
            display: inline-block;
-           background: #0056a7;
-           color: white;
+           background: #d4af37;
+           color: #2a2418;
            text-decoration: none;
            padding: 16px 32px;
            border-radius: 40px;
            font-size: 1.2rem;
-           font-weight: 500;
+           font-weight: 600;
            margin: 5px 0 15px;
-           box-shadow: 0 6px 14px rgba(0, 86, 167, 0.25);
+           box-shadow: 0 6px 14px rgba(180, 134, 11, 0.25);
            transition: all 0.2s;
            width: 100%;
            border: none;
@@ -138,8 +139,8 @@
            text-align: center;
        }
        .vcard-button:hover {
-           background: #003d7a;
-           box-shadow: 0 8px 18px rgba(0, 86, 167, 0.35);
+           background: #c4a02c;
+           box-shadow: 0 8px 18px rgba(180, 134, 11, 0.35);
            transform: translateY(-2px);
        }
        .vcard-button:active {
@@ -148,43 +149,44 @@
        .review-button {
            display: inline-block;
            background: white;
-           color: #0056a7;
+           color: #b8860b;
            text-decoration: none;
            padding: 16px 32px;
            border-radius: 40px;
            font-size: 1.2rem;
-           font-weight: 500;
+           font-weight: 600;
            margin: 5px 0 15px;
            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
            transition: all 0.2s;
            width: 100%;
-           border: 2px solid #0056a7;
+           border: 2px solid #d4af37;
            cursor: pointer;
            letter-spacing: 0.5px;
            text-align: center;
        }
        .review-button:hover {
-           background: #f0f7ff;
+           background: #fef9e6;
            transform: translateY(-2px);
-           box-shadow: 0 4px 12px rgba(0, 86, 167, 0.2);
+           box-shadow: 0 4px 12px rgba(180, 134, 11, 0.2);
        }
        .website-link {
            display: inline-block;
-           color: #0056a7;
+           color: #b8860b;
            text-decoration: none;
-           font-weight: 500;
-           font-size: 1.3rem;
-           border-bottom: 2px solid #cde1f0;
+           font-weight: 600;
+           font-size: 1.2rem;
+           border-bottom: 2px solid #f0e2bc;
            padding-bottom: 4px;
            margin: 20px 0 10px;
            transition: all 0.2s;
        }
        .website-link:hover {
-           border-bottom-color: #0056a7;
+           border-bottom-color: #d4af37;
+           color: #9b6e0a;
        }
        .hint {
-           color: #6f8fa0;
-           font-size: 0.9rem;
+           color: #9b8a6b;
+           font-size: 0.85rem;
            margin-top: 15px;
        }
        @media (max-width: 480px) {
@@ -192,19 +194,19 @@
                padding: 30px 20px;
            }
            .name {
-               font-size: 2rem;
+               font-size: 1.8rem;
            }
            .title {
-               font-size: 1rem;
+               font-size: 0.95rem;
            }
            .company {
-               font-size: 1rem;
+               font-size: 0.9rem;
            }
            .logo-container {
-               min-height: 200px;
+               min-height: 120px;
            }
-           .logo-container img {
-               transform: scale(2.2);
+           .label {
+               min-width: 70px;
            }
        }
 </style>
@@ -212,34 +214,40 @@
 <body>
 <div class="card">
 <div class="logo-container">
-<img id="logoImg" src="logo.png" alt="Levata" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='block';">
-<div id="fallback-logo" style="display: none; font-size: 2.2rem; font-weight: 600; color: #0056a7; letter-spacing: 1px;">
-               levata
+<img id="logoImg" src="logo.png" alt="Pohlmann Kaminholz" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='block';">
+<div id="fallback-logo" style="display: none; font-size: 1.6rem; font-weight: 600; color: #b8860b; letter-spacing: 1px;">
+               🌲 POHLMANN 🌲
 </div>
 </div>
-<h1 class="name">Johann Kemmelz</h1>
-<div class="title">Fachberater für Premium-Brennholz</div>
-<div class="company">Kaminholz Ludger Pohlmann UG (haftungsbeschränkt)</div>
+<h1 class="name">Lüdger Pohlmann</h1>
+<div class="title">Kaminholz, Verarbeitung & Handel</div>
+<div class="company">Ihr Spezialist für hochwertiges Brennholz</div>
 <div class="detail">
 <div class="detail-item">
 <span class="emoji">📞</span>
 <span class="text">
-<span class="label">T:</span> +49 152 34567890
+<span class="label">Telefon:</span> 0151-28895031
 </span>
 </div>
 <div class="detail-item">
 <span class="emoji">✉️</span>
 <span class="text">
-<span class="label">M:</span>
-<a href="mailto:j.kemmelz@pohlmann-kaminholz.de" class="email">j.kemmelz@pohlmann-kaminholz.de</a>
+<span class="label">E-Mail:</span>
+<a href="mailto:post@pohlmann-kaminholz.de" class="email">post@pohlmann-kaminholz.de</a>
+</span>
+</div>
+<div class="detail-item">
+<span class="emoji">🏠</span>
+<span class="text address">
+<span class="label">Adresse:</span><br>
+                   Am Hach 43
 </span>
 </div>
 <div class="detail-item">
 <span class="emoji">📍</span>
 <span class="text address">
-<span class="label">Adresse:</span><br>
-                   Industriestraße 12<br>
-                   49377 Vechta, Deutschland
+<span class="label">Abholadresse:</span><br>
+                   Lehmkuhlweg 3, 48496 Hopsten
 </span>
 </div>
 </div>
@@ -268,7 +276,7 @@ www.pohlmann-kaminholz.de
            const googleReviewsUrl = "https://www.google.com/search?sca_esv=2990b0cc5dc485ee&sxsrf=ANbL-n4tbH-gfbejguuRkvUyHQ9VAU_XPA:1774259627164&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x5MV3w5_YE6JeUPYDYkBNbZIx9UdoyLSPMS-AkrXJmjgmOfdR4QuSa-L3yZ-PrgHUK4IHeARebhvS09oc1XHpTMu-cvLE7afeL7B48QnClYTCQCUo4_wUCRJoGdywvAuhO7gjde4mfzPwwTJTWXi8oIAyNZa&q=Kaminholz+Ludger+Pohlmann+UG+%28haftungsbeschr%C3%A4nkt%29+Rezensionen&sa=X&ved=2ahUKEwiS2cOW4LWTAxWM2gIHHcwGIQYQ0bkNegQIMhAH&biw=1536&bih=729&dpr=1.25";
            window.open(googleReviewsUrl, "_blank", "noopener,noreferrer");
        });
-       // Logo Fallback
+       // Logo Fallback - ohne Zoom
        window.onload = function() {
            var img = document.getElementById('logoImg');
            if (img && img.complete && img.naturalHeight === 0) {
