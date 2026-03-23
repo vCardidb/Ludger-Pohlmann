@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lüdger Pohlmann | Kaminholz Verarbeitung & Handel</title>
+<title>Ludger Pohlmann | Kaminholz Verarbeitung & Handel</title>
 <style>
        * {
            margin: 0;
@@ -106,7 +106,7 @@
            font-weight: 600;
            color: #b8860b;
            margin-right: 8px;
-           min-width: 85px;
+           min-width: 95px;
            display: inline-block;
        }
        .email {
@@ -120,7 +120,8 @@
        .address {
            line-height: 1.6;
        }
-       .vcard-button {
+       /* Einheitliche Button/Link Gestaltung */
+       .action-button {
            display: inline-block;
            background: #d4af37;
            color: #2a2418;
@@ -129,65 +130,56 @@
            border-radius: 40px;
            font-size: 1.2rem;
            font-weight: 600;
-           margin: 5px 0 15px;
-           box-shadow: 0 6px 14px rgba(180, 134, 11, 0.25);
-           transition: all 0.2s;
+           margin: 8px 0;
+           box-shadow: 0 4px 12px rgba(180, 134, 11, 0.25);
+           transition: all 0.2s ease;
            width: 100%;
            border: none;
            cursor: pointer;
            letter-spacing: 0.5px;
            text-align: center;
+           font-family: inherit;
        }
-       .vcard-button:hover {
+       .action-button:hover {
            background: #c4a02c;
-           box-shadow: 0 8px 18px rgba(180, 134, 11, 0.35);
+           box-shadow: 0 6px 16px rgba(180, 134, 11, 0.35);
            transform: translateY(-2px);
        }
-       .vcard-button:active {
+       .action-button:active {
            transform: translateY(0);
        }
-       .review-button {
+       /* Webseite Link als Button im gleichen Stil */
+       .website-button {
            display: inline-block;
-           background: white;
-           color: #b8860b;
+           background: #d4af37;
+           color: #2a2418;
            text-decoration: none;
            padding: 16px 32px;
            border-radius: 40px;
            font-size: 1.2rem;
            font-weight: 600;
-           margin: 5px 0 15px;
-           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-           transition: all 0.2s;
+           margin: 8px 0;
+           box-shadow: 0 4px 12px rgba(180, 134, 11, 0.25);
+           transition: all 0.2s ease;
            width: 100%;
-           border: 2px solid #d4af37;
-           cursor: pointer;
-           letter-spacing: 0.5px;
            text-align: center;
+           font-family: inherit;
        }
-       .review-button:hover {
-           background: #fef9e6;
+       .website-button:hover {
+           background: #c4a02c;
+           box-shadow: 0 6px 16px rgba(180, 134, 11, 0.35);
            transform: translateY(-2px);
-           box-shadow: 0 4px 12px rgba(180, 134, 11, 0.2);
        }
-       .website-link {
-           display: inline-block;
-           color: #b8860b;
-           text-decoration: none;
-           font-weight: 600;
-           font-size: 1.2rem;
-           border-bottom: 2px solid #f0e2bc;
-           padding-bottom: 4px;
-           margin: 20px 0 10px;
-           transition: all 0.2s;
-       }
-       .website-link:hover {
-           border-bottom-color: #d4af37;
-           color: #9b6e0a;
+       .action-group {
+           display: flex;
+           flex-direction: column;
+           gap: 12px;
+           margin-top: 10px;
        }
        .hint {
            color: #9b8a6b;
            font-size: 0.85rem;
-           margin-top: 15px;
+           margin-top: 20px;
        }
        @media (max-width: 480px) {
            .card {
@@ -206,7 +198,11 @@
                min-height: 120px;
            }
            .label {
-               min-width: 70px;
+               min-width: 80px;
+           }
+           .action-button, .website-button {
+               padding: 14px 24px;
+               font-size: 1rem;
            }
        }
 </style>
@@ -251,18 +247,19 @@
 </span>
 </div>
 </div>
+<!-- Einheitliche Buttons in Gold -->
+<div class="action-group">
 <!-- vCard Button -->
-<a href="Pohlmann.vcf" class="vcard-button" download="Pohlmann.vcf">
-           ⬇️ Kontakt speichern (vCard)
+<a href="Pohlmann.vcf" class="action-button" download="Pohlmann.vcf">
+               ⬇️ Kontakt speichern (vCard)
 </a>
 <!-- Google Rezensionen Button -->
-<button id="reviewBtn" class="review-button">
-           ⭐ Google Rezensionen anzeigen
+<button id="reviewBtn" class="action-button">
+               ⭐ Google Rezensionen anzeigen
 </button>
-<!-- Link zur Webseite -->
-<div>
-<a href="https://www.pohlmann-kaminholz.de" target="_blank" class="website-link">
-www.pohlmann-kaminholz.de
+<!-- Link zur Webseite als Button -->
+<a href="https://www.pohlmann-kaminholz.de" target="_blank" class="website-button">
+               🌐 www.pohlmann-kaminholz.de
 </a>
 </div>
 <div class="hint">
