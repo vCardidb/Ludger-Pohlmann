@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Johann Kemmelz | Pohlmann Kaminholz</title>
 <style>
        * {
@@ -11,455 +11,271 @@
            box-sizing: border-box;
        }
        body {
-           font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, 'Roboto', sans-serif;
-           background: linear-gradient(145deg, #e9f0e6 0%, #d4dec8 100%);
+           font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+           background: linear-gradient(135deg, #1a2a3a 0%, #2c4050 100%);
            min-height: 100vh;
            display: flex;
            align-items: center;
            justify-content: center;
-           padding: 24px 20px;
+           padding: 20px;
        }
        .card {
-           max-width: 620px;
+           background: white;
+           max-width: 550px;
            width: 100%;
-           background: #ffffff;
-           border-radius: 36px;
-           box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.05);
-           overflow: hidden;
-           border: 1px solid rgba(100, 80, 50, 0.12);
+           padding: 45px 40px;
+           border-radius: 24px;
+           box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.3);
+           text-align: center;
+           border-top: 5px solid #0056a7;
        }
-       .card-header {
-           background: #fefaf2;
-           padding: 28px 32px 16px 32px;
-           border-bottom: 2px solid #e8dcc8;
-       }
-       .logo-wrapper {
+       .logo-container {
+           margin-bottom: 30px;
+           padding: 20px;
+           background: #f5f8fc;
+           border-radius: 16px;
+           min-height: 220px;
            display: flex;
-           justify-content: center;
            align-items: center;
-           margin-bottom: 20px;
-           background: #ffffff;
-           padding: 12px 24px;
-           border-radius: 60px;
-           box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-           min-height: 120px;
+           justify-content: center;
+           overflow: hidden;
        }
-       .logo-img {
-           max-width: 280px;
-           max-height: 100px;
+       .logo-container img {
+           transform: scale(2.5);
+           max-width: 100%;
+           max-height: 100%;
            width: auto;
            height: auto;
+           display: inline-block;
            object-fit: contain;
        }
        .fallback-logo {
-           font-size: 1.6rem;
-           font-weight: 700;
+           font-size: 2.2rem;
+           font-weight: 600;
+           color: #0056a7;
            letter-spacing: 1px;
-           color: #3a6b2f;
-           font-family: 'Playfair Display', serif;
-           background: #f5f2e8;
-           padding: 12px 28px;
-           border-radius: 50px;
-           text-align: center;
-       }
-       .identity {
-           text-align: center;
-           padding: 8px 0 12px 0;
        }
        .name {
            font-size: 2.5rem;
-           font-weight: 700;
-           color: #2c4a2a;
-           letter-spacing: -0.3px;
-           font-family: 'Playfair Display', 'Georgia', serif;
+           font-weight: 500;
+           color: #1a2a3a;
            line-height: 1.2;
-           margin-bottom: 8px;
+           margin-bottom: 5px;
+           font-family: 'Georgia', serif;
        }
-       .subline {
-           font-size: 1rem;
+       .title {
+           font-size: 1.2rem;
+           color: #0056a7;
            font-weight: 500;
-           color: #b87a3b;
-           background: #fff6ea;
-           display: inline-block;
-           padding: 5px 20px;
-           border-radius: 40px;
-           margin-top: 8px;
+           margin-bottom: 5px;
        }
-       .company-tag {
-           font-size: 0.95rem;
-           font-weight: 500;
-           color: #6a785e;
-           margin-top: 12px;
-           border-top: 1px dashed #e0d4c2;
-           padding-top: 12px;
-           display: inline-block;
+       .company {
+           font-size: 1.2rem;
+           color: #4a6782;
+           font-weight: 400;
+           margin-bottom: 25px;
+           padding-bottom: 15px;
+           border-bottom: 2px solid #e5eef5;
        }
-       .feature-section {
-           background: #f9f6ef;
-           margin: 20px 28px 0 28px;
-           padding: 18px 22px;
-           border-radius: 28px;
-           box-shadow: inset 0 1px 2px #fff8, 0 4px 8px rgba(0,0,0,0.02);
+       .detail {
+           margin: 30px 0;
+           text-align: left;
+           background: #f5f8fc;
+           padding: 25px;
+           border-radius: 16px;
        }
-       .feature-title {
-           font-weight: 700;
-           color: #4a7638;
-           font-size: 0.9rem;
-           text-transform: uppercase;
-           letter-spacing: 1.5px;
-           margin-bottom: 14px;
+       .detail-item {
            display: flex;
-           align-items: center;
-           gap: 10px;
+           align-items: flex-start;
+           margin: 18px 0;
+           font-size: 1.1rem;
        }
-       .feature-list {
-           display: flex;
-           flex-wrap: wrap;
-           gap: 12px;
-           margin-bottom: 6px;
-       }
-       .feature-badge {
-           background: white;
-           padding: 6px 16px;
-           border-radius: 40px;
-           font-size: 0.85rem;
-           font-weight: 500;
-           color: #3a672e;
-           box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-           border: 1px solid #e0d4c2;
-       }
-       .contact-details {
-           padding: 20px 28px 12px 28px;
-       }
-       .detail-card {
-           background: #fefefc;
-           border-radius: 28px;
-           padding: 6px 8px;
-       }
-       .detail-row {
-           display: flex;
-           align-items: center;
-           gap: 18px;
-           padding: 14px 8px;
-           border-bottom: 1px solid #efe7db;
-       }
-       .detail-row:last-child {
-           border-bottom: none;
-       }
-       .detail-icon {
-           width: 44px;
-           height: 44px;
-           background: #f2ece2;
-           border-radius: 30px;
-           display: flex;
-           align-items: center;
-           justify-content: center;
+       .emoji {
            font-size: 1.5rem;
-           color: #b87a3b;
-       }
-       .detail-info {
-           flex: 1;
-       }
-       .detail-label {
-           font-size: 0.7rem;
-           font-weight: 600;
-           text-transform: uppercase;
-           color: #9b8970;
-           letter-spacing: 0.6px;
-       }
-       .detail-value {
-           font-size: 1.05rem;
-           font-weight: 500;
-           color: #2e402a;
-           word-break: break-word;
-       }
-       .detail-value a {
-           color: #b87a3b;
-           text-decoration: none;
-           font-weight: 600;
-           border-bottom: 1px dotted #dbbc96;
-       }
-       .detail-value a:hover {
-           color: #8b5a2c;
-       }
-       .address-block {
-           line-height: 1.45;
-       }
-       .website-area {
+           margin-right: 18px;
+           min-width: 35px;
            text-align: center;
-           margin: 12px 28px 20px 28px;
-           padding: 10px 0;
-           background: #f5f1e8;
-           border-radius: 48px;
+           color: #0056a7;
+       }
+       .text {
+           color: #2c4050;
+           word-break: break-word;
+           line-height: 1.4;
+       }
+       .label {
+           font-weight: 600;
+           color: #0056a7;
+           margin-right: 8px;
+           min-width: 50px;
+       }
+       .email {
+           color: #0056a7;
+           text-decoration: none;
+           font-weight: 500;
+       }
+       .email:hover {
+           text-decoration: underline;
+       }
+       .address {
+           line-height: 1.5;
+       }
+       .vcard-button {
+           display: inline-block;
+           background: #0056a7;
+           color: white;
+           text-decoration: none;
+           padding: 16px 32px;
+           border-radius: 40px;
+           font-size: 1.2rem;
+           font-weight: 500;
+           margin: 5px 0 15px;
+           box-shadow: 0 6px 14px rgba(0, 86, 167, 0.25);
+           transition: all 0.2s;
+           width: 100%;
+           border: none;
+           cursor: pointer;
+           letter-spacing: 0.5px;
+           text-align: center;
+       }
+       .vcard-button:hover {
+           background: #003d7a;
+           box-shadow: 0 8px 18px rgba(0, 86, 167, 0.35);
+           transform: translateY(-2px);
+       }
+       .vcard-button:active {
+           transform: translateY(0);
+       }
+       .review-button {
+           display: inline-block;
+           background: white;
+           color: #0056a7;
+           text-decoration: none;
+           padding: 16px 32px;
+           border-radius: 40px;
+           font-size: 1.2rem;
+           font-weight: 500;
+           margin: 5px 0 15px;
+           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+           transition: all 0.2s;
+           width: 100%;
+           border: 2px solid #0056a7;
+           cursor: pointer;
+           letter-spacing: 0.5px;
+           text-align: center;
+       }
+       .review-button:hover {
+           background: #f0f7ff;
+           transform: translateY(-2px);
+           box-shadow: 0 4px 12px rgba(0, 86, 167, 0.2);
        }
        .website-link {
-           font-weight: 700;
-           font-size: 1.1rem;
-           color: #3a6b2f;
+           display: inline-block;
+           color: #0056a7;
            text-decoration: none;
-           display: inline-flex;
-           align-items: center;
-           gap: 10px;
-           padding: 8px 18px;
-           border-radius: 40px;
-           transition: 0.2s;
+           font-weight: 500;
+           font-size: 1.3rem;
+           border-bottom: 2px solid #cde1f0;
+           padding-bottom: 4px;
+           margin: 20px 0 10px;
+           transition: all 0.2s;
        }
        .website-link:hover {
-           background: #e8dfd0;
-           color: #2a5522;
+           border-bottom-color: #0056a7;
        }
-       .action-buttons {
-           padding: 6px 28px 28px 28px;
-           display: flex;
-           flex-direction: column;
-           gap: 14px;
+       .hint {
+           color: #6f8fa0;
+           font-size: 0.9rem;
+           margin-top: 15px;
        }
-       .btn-primary {
-           background: #3a6b2f;
-           border: none;
-           width: 100%;
-           padding: 16px 12px;
-           border-radius: 60px;
-           font-weight: 700;
-           font-size: 1.05rem;
-           color: white;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           gap: 12px;
-           cursor: pointer;
-           transition: all 0.2s ease;
-           box-shadow: 0 4px 8px rgba(58, 107, 47, 0.2);
-           text-decoration: none;
-           font-family: inherit;
-       }
-       .btn-primary:hover {
-           background: #2a5522;
-           transform: translateY(-2px);
-           box-shadow: 0 8px 16px rgba(58, 107, 47, 0.25);
-       }
-       .btn-secondary {
-           background: #ffffff;
-           border: 2px solid #d8c8ae;
-           width: 100%;
-           padding: 14px 12px;
-           border-radius: 60px;
-           font-weight: 600;
-           font-size: 1rem;
-           color: #7a5a38;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           gap: 12px;
-           cursor: pointer;
-           transition: all 0.2s;
-           text-decoration: none;
-           font-family: inherit;
-       }
-       .btn-secondary:hover {
-           background: #fef7ea;
-           border-color: #b87a3b;
-           color: #5c401f;
-       }
-       .hint-text {
-           font-size: 0.75rem;
-           text-align: center;
-           color: #9b8b74;
-           margin-top: 6px;
-       }
-       footer {
-           text-align: center;
-           font-size: 0.7rem;
-           padding: 16px 20px 20px;
-           color: #a89f8a;
-           border-top: 1px solid #eee5d8;
-           margin-top: 12px;
-           background: #fefcf8;
-       }
-       @media (max-width: 550px) {
+       @media (max-width: 480px) {
            .card {
-               border-radius: 28px;
+               padding: 30px 20px;
            }
            .name {
                font-size: 2rem;
            }
-           .detail-row {
-               gap: 12px;
+           .title {
+               font-size: 1rem;
            }
-           .detail-icon {
-               width: 38px;
-               height: 38px;
-               font-size: 1.2rem;
+           .company {
+               font-size: 1rem;
            }
-           .feature-section {
-               margin: 16px 16px 0 16px;
-               padding: 14px 16px;
+           .logo-container {
+               min-height: 200px;
            }
-           .contact-details {
-               padding: 12px 20px;
-           }
-           .action-buttons {
-               padding: 6px 20px 24px 20px;
+           .logo-container img {
+               transform: scale(2.2);
            }
        }
 </style>
 </head>
 <body>
 <div class="card">
-<div class="card-header">
-<div class="logo-wrapper" id="logoWrapper">
-<img id="dynamicLogo" class="logo-img" src="" alt="Pohlmann Kaminholz" style="display: none;">
-<div id="fallbackLogoText" class="fallback-logo">🌲 POHLMANN KAMINHOLZ 🌲</div>
-</div>
-<div class="identity">
-<div class="name">Johann Kemmelz</div>
-<div class="subline">Fachberater für Premium-Brennholz</div>
-<div class="company-tag">Kaminholz Ludger Pohlmann UG (haftungsbeschränkt)</div>
+<div class="logo-container">
+<img id="logoImg" src="logo.png" alt="Levata" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='block';">
+<div id="fallback-logo" style="display: none; font-size: 2.2rem; font-weight: 600; color: #0056a7; letter-spacing: 1px;">
+               levata
 </div>
 </div>
-<div class="feature-section">
-<div class="feature-title">
-<span>🔥</span> UNSERE PREMIUM QUALITÄT
+<h1 class="name">Johann Kemmelz</h1>
+<div class="title">Fachberater für Premium-Brennholz</div>
+<div class="company">Kaminholz Ludger Pohlmann UG (haftungsbeschränkt)</div>
+<div class="detail">
+<div class="detail-item">
+<span class="emoji">📞</span>
+<span class="text">
+<span class="label">T:</span> +49 152 34567890
+</span>
 </div>
-<div class="feature-list">
-<span class="feature-badge">✔ Restfeuchte < 20%</span>
-<span class="feature-badge">✔ Hoher Brennwert</span>
-<span class="feature-badge">✔ Exzellentes Flammenbild</span>
-<span class="feature-badge">✔ Bestens stapelbar</span>
+<div class="detail-item">
+<span class="emoji">✉️</span>
+<span class="text">
+<span class="label">M:</span>
+<a href="mailto:j.kemmelz@pohlmann-kaminholz.de" class="email">j.kemmelz@pohlmann-kaminholz.de</a>
+</span>
 </div>
-<div style="font-size:0.75rem; color:#b29266; margin-top: 12px;">*von Kunden bestätigte Eigenschaften</div>
-</div>
-<div class="contact-details">
-<div class="detail-card">
-<div class="detail-row">
-<div class="detail-icon">📞</div>
-<div class="detail-info">
-<div class="detail-label">Telefon</div>
-<div class="detail-value">+49 152 34567890</div>
-</div>
-</div>
-<div class="detail-row">
-<div class="detail-icon">✉️</div>
-<div class="detail-info">
-<div class="detail-label">E-Mail</div>
-<div class="detail-value"><a href="mailto:j.kemmelz@pohlmann-kaminholz.de">j.kemmelz@pohlmann-kaminholz.de</a></div>
+<div class="detail-item">
+<span class="emoji">📍</span>
+<span class="text address">
+<span class="label">Adresse:</span><br>
+                   Industriestraße 12<br>
+                   49377 Vechta, Deutschland
+</span>
 </div>
 </div>
-<div class="detail-row">
-<div class="detail-icon">📍</div>
-<div class="detail-info">
-<div class="detail-label">Anschrift</div>
-<div class="detail-value address-block">
-                           Kaminholz Ludger Pohlmann UG (haftungsbeschränkt)<br>
-                           Industriestraße 12 · 49377 Vechta<br>
-                           Deutschland
-</div>
-</div>
-</div>
-<div class="detail-row">
-<div class="detail-icon">🕒</div>
-<div class="detail-info">
-<div class="detail-label">Beratungszeiten</div>
-<div class="detail-value">Mo – Fr 8:00 – 17:00 Uhr</div>
-</div>
-</div>
-</div>
-</div>
-<div class="website-area">
-<a href="https://www.pohlmann-kaminholz.de" target="_blank" class="website-link">
-               🌐 www.pohlmann-kaminholz.de
+<!-- vCard Button -->
+<a href="Pohlmann.vcf" class="vcard-button" download="Pohlmann.vcf">
+           ⬇️ Kontakt speichern (vCard)
 </a>
-</div>
-<div class="action-buttons">
-<a id="downloadVcardBtn" class="btn-primary" href="#" download="Pohlmann.vcf">
-               ⬇️ Kontakt speichern (vCard)
-</a>
-<button id="googleReviewBtn" class="btn-secondary">
-               ⭐ Google Rezensionen anzeigen
+<!-- Google Rezensionen Button -->
+<button id="reviewBtn" class="review-button">
+           ⭐ Google Rezensionen anzeigen
 </button>
-<div class="hint-text">Klicken, um die Visitenkarte als Pohlmann.vcf herunterzuladen oder Bewertungen zu öffnen</div>
+<!-- Link zur Webseite -->
+<div>
+<a href="https://www.pohlmann-kaminholz.de" target="_blank" class="website-link">
+www.pohlmann-kaminholz.de
+</a>
 </div>
-<footer>
-           🌲 Hochwertiges Kaminholz mit garantierter Restfeuchte unter 20% | Lieferung bundesweit
-</footer>
+<div class="hint">
+           Klicken Sie auf den vCard-Button, um die Kontaktdaten zu speichern
+</div>
 </div>
 <script>
-       // vCard-Daten
-       function generateVCardData() {
-           const vcardLines = [
-               "BEGIN:VCARD",
-               "VERSION:3.0",
-               "FN:Johann Kemmelz",
-               "N:Kemmelz;Johann;;;",
-               "TITLE:Fachberater für Premium-Brennholz",
-               "ORG:Kaminholz Ludger Pohlmann UG (haftungsbeschränkt)",
-               "TEL;TYPE=WORK,VOICE:+4915234567890",
-               "TEL;TYPE=CELL:+4915234567890",
-               "EMAIL;TYPE=WORK:j.kemmelz@pohlmann-kaminholz.de",
-               "ADR;TYPE=WORK:;;Industriestraße 12;Vechta;;49377;Deutschland",
-               "URL:https://www.pohlmann-kaminholz.de",
-               "NOTE:Premium Kaminholz mit Restfeuchte unter 20% – hoher Brennwert, exzellentes Flammenbild und bestens stapelbar durch speziellen Spaltvorgang. Von Kunden bestätigte Qualität.",
-               "CATEGORIES:Holzhandel,Brennholz,Ofenholz",
-               "END:VCARD"
-           ];
-           return vcardLines.join("\n");
-       }
-       function downloadVCard() {
-           const vcardData = generateVCardData();
-           const blob = new Blob([vcardData], { type: "text/vcard" });
-           const url = URL.createObjectURL(blob);
-           const downloadLink = document.getElementById("downloadVcardBtn");
-           downloadLink.href = url;
-           downloadLink.setAttribute("download", "Pohlmann.vcf");
-           setTimeout(() => {
-               URL.revokeObjectURL(url);
-           }, 1000);
-       }
-       const vcardBtn = document.getElementById("downloadVcardBtn");
-       vcardBtn.addEventListener("click", function(e) {
-           e.preventDefault();
-           downloadVCard();
-       });
        // Google Rezensionen Button
-       const reviewBtn = document.getElementById("googleReviewBtn");
+       const reviewBtn = document.getElementById("reviewBtn");
        reviewBtn.addEventListener("click", function() {
            const googleReviewsUrl = "https://www.google.com/search?sca_esv=2990b0cc5dc485ee&sxsrf=ANbL-n4tbH-gfbejguuRkvUyHQ9VAU_XPA:1774259627164&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x5MV3w5_YE6JeUPYDYkBNbZIx9UdoyLSPMS-AkrXJmjgmOfdR4QuSa-L3yZ-PrgHUK4IHeARebhvS09oc1XHpTMu-cvLE7afeL7B48QnClYTCQCUo4_wUCRJoGdywvAuhO7gjde4mfzPwwTJTWXi8oIAyNZa&q=Kaminholz+Ludger+Pohlmann+UG+%28haftungsbeschr%C3%A4nkt%29+Rezensionen&sa=X&ved=2ahUKEwiS2cOW4LWTAxWM2gIHHcwGIQYQ0bkNegQIMhAH&biw=1536&bih=729&dpr=1.25";
            window.open(googleReviewsUrl, "_blank", "noopener,noreferrer");
        });
-       // Logo automatisch erkennen und laden
-       function tryLoadLogo() {
-           const logoImg = document.getElementById("dynamicLogo");
-           const fallbackDiv = document.getElementById("fallbackLogoText");
-           const possibleLogoNames = ["logo.png", "logo.jpg", "Logo.png", "Logo.jpg", "pohlmann-logo.png", "firmenlogo.png", "Pohlmann_Logo.png"];
-           let attemptIndex = 0;
-           function tryNextLogo() {
-               if (attemptIndex >= possibleLogoNames.length) {
-                   // Kein Logo gefunden, Fallback anzeigen
-                   logoImg.style.display = "none";
-                   fallbackDiv.style.display = "flex";
-                   return;
-               }
-               const logoName = possibleLogoNames[attemptIndex];
-               logoImg.src = logoName;
-               logoImg.style.display = "block";
-               fallbackDiv.style.display = "none";
-               logoImg.onload = function() {
-                   // Logo erfolgreich geladen
-                   logoImg.style.display = "block";
-                   fallbackDiv.style.display = "none";
-               };
-               logoImg.onerror = function() {
-                   // Nächsten Versuch starten
-                   attemptIndex++;
-                   tryNextLogo();
-               };
+       // Logo Fallback
+       window.onload = function() {
+           var img = document.getElementById('logoImg');
+           if (img && img.complete && img.naturalHeight === 0) {
+               img.style.display = 'none';
+               document.getElementById('fallback-logo').style.display = 'block';
            }
-           tryNextLogo();
        }
-       // Beim Laden der Seite Logo versuchen
-       window.addEventListener("load", function() {
-           tryLoadLogo();
-       });
 </script>
 </body>
 </html>
